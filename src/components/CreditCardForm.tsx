@@ -204,7 +204,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                 },
               }}
               onSubmitEditing={goNext}
-              onFocus={() => setFocusedField(CardFields.CVV)}
+              onFocus={() => setFocusedField(CardFields.ZipCode)}
               onValid={goNext}
             />
           </View>
@@ -212,7 +212,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             style={textFieldStyle}
             ref={zipCodeRef}
             name="zipCode"
-            label={translations.cardHolderName}
+            label={'ZIPCODE'}
             rules={{
               required: translations.cardNumberRequired,
               validate: {
@@ -240,8 +240,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flex: 1,
-    flexDirection: 'row',
-    marginBottom: 36,
+    flexDirection: 'row'
   },
   textField: {
     marginTop: 24,
