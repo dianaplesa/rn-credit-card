@@ -4,7 +4,8 @@ export interface FormModel {
   holderName: string
   cardNumber: string
   expiration: string
-  cvv: string
+  cvv: string,
+  zipCode: string
 }
 
 export enum CardFields {
@@ -12,6 +13,7 @@ export enum CardFields {
   CardHolderName,
   Expiration,
   CVV,
+  ZipCode
 }
 
 export type TranslationsNonNull = {

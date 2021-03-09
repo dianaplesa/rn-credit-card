@@ -25,6 +25,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
   const { horizontalStart = true, translations: parentTranslations } = props
   const translations = getTranslations(parentTranslations)
   const { trigger, watch } = useFormContext()
+  console.log(useFormContext())
   const cardNumber = watch('cardNumber')
   const { card } = cardValidator.number(cardNumber)
   const isAmex = card?.type === 'american-express'
@@ -43,6 +44,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
   const cardNumberRef = useRef<TextInput>(null)
   const expirationRef = useRef<TextInput>(null)
   const cvvRef = useRef<TextInput>(null)
+  const zipCodeRef = useRef<TextInput>(null)
 
   const [focusedField, setFocusedField] = useState<CardFields | null>(null)
 
@@ -201,10 +203,31 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                   },
                 },
               }}
+              onSubmitEditing={goNext}
               onFocus={() => setFocusedField(CardFields.CVV)}
               onValid={goNext}
             />
           </View>
+          <FormTextField
+            style={textFieldStyle}
+            ref={zipCodeRef}
+            name="zipCode"
+            label={translations.cardHolderName}
+            rules={{
+              required: translations.cardNumberRequired,
+              validate: {
+                isValid: (value: string) => {
+                  return (
+                    cardValidator.cardholderName(value).isValid ||
+                    translations.cardNumberInvalid
+                  )
+                },
+              },
+            }}
+            autoCorrect={false}
+            // onSubmitEditing={goNext}
+            onFocus={() => setFocusedField(CardFields.ZipCode)}
+          />
         </ScrollView>
       </View>
     </LibraryContext.Provider>
