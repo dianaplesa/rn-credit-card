@@ -76,14 +76,14 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
       scrollRef.current?.scrollTo({ x: (focusedField + 1) * inputWidth })
     }
 
-    if (focusedField === CardFields.CVV) {
+    if (focusedField === CardFields.ZipCode) {
       setFocusedField(null)
       setIsHorizontal(false)
       Keyboard.dismiss()
       return
     }
 
-    const ref = [cardNumberRef, holderNameRef, expirationRef, cvvRef][
+    const ref = [cardNumberRef, holderNameRef, expirationRef, cvvRef, zipCodeRef][
       focusedField + 1
     ]
     ref.current?.focus()
