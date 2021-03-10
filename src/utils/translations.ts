@@ -5,11 +5,12 @@ export function getTranslations(
 ): TranslationsNonNull {
   return {
     cardNumber: 'Card Number',
-    cardHolderName: 'Cardholder Name',
+    cardHolderName: 'Name on card',
     nameSurname: 'Name Surname',
     mmYY: 'MM/YY',
-    expiration: 'Expiration',
-    securityCode: 'Security Code',
+    expiration: 'Expiration date (MM/YY)',
+    securityCode: 'CVV',
+    zipCode: 'Zip code',
     next: 'Next',
     done: 'Done',
     cardNumberRequired: 'Card number is required.',
@@ -20,6 +21,7 @@ export function getTranslations(
     expirationInvalid: 'This expiration date looks invalid.',
     securityCodeRequired: 'Security code is required.',
     securityCodeInvalid: 'This security date looks invalid.',
+    zipCodeRequired: 'Zip code is required.',
     ...translations,
   }
 }

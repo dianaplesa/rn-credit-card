@@ -66,7 +66,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
   async function goNext() {
     if (focusedField === null) return
 
-    const field = ['cardNumber', 'holderName', 'expiration', 'cvv'][
+    const field = ['cardNumber', 'holderName', 'expiration', 'cvv', 'zipCode'][
       focusedField
     ]
 
@@ -188,7 +188,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               style={textFieldStyle}
               ref={cvvRef}
               name="cvv"
-              label="Security Code"
+              label={translations.securityCode}
               keyboardType="number-pad"
               maxLength={cvvLength}
               validationLength={cvvLength}
@@ -212,17 +212,17 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             style={textFieldStyle}
             ref={zipCodeRef}
             name="zipCode"
-            label={'ZIPCODE'}
+            label={translations.zipCode}
             rules={{
-              required: translations.cardNumberRequired,
-              validate: {
-                isValid: (value: string) => {
-                  return (
-                    cardValidator.cardholderName(value).isValid ||
-                    translations.cardNumberInvalid
-                  )
-                },
-              },
+              required: translations.zipCodeRequired,
+              // validate: {
+              //   isValid: (value: string) => {
+              //     return (
+              //       cardValidator.cardholderName(value).isValid ||
+              //       translations.cardNumberInvalid
+              //     )
+              //   },
+              // },
             }}
             autoCorrect={false}
             // onSubmitEditing={goNext}

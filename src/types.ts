@@ -23,6 +23,7 @@ export type TranslationsNonNull = {
   mmYY: string
   expiration: string
   securityCode: string
+  zipCode: string
   next: string
   done: string
   cardNumberRequired: string
@@ -33,6 +34,7 @@ export type TranslationsNonNull = {
   expirationInvalid: string
   securityCodeRequired: string
   securityCodeInvalid: string
+  zipCodeRequired: string
 }
 type Partial<T> = {
   [P in keyof T]?: T[P]
