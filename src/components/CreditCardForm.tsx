@@ -203,8 +203,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                   },
                 },
               }}
-              onSubmitEditing={goNext}
-              onFocus={() => setFocusedField(CardFields.ZipCode)}
+              onFocus={() => setFocusedField(CardFields.CVV)}
               onValid={goNext}
             />
           </View>
