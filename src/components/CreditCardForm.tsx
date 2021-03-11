@@ -25,7 +25,6 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
   const { horizontalStart = true, translations: parentTranslations } = props
   const translations = getTranslations(parentTranslations)
   const { trigger, watch } = useFormContext()
-  console.log(useFormContext())
   const cardNumber = watch('cardNumber')
   const { card } = cardValidator.number(cardNumber)
   const isAmex = card?.type === 'american-express'
@@ -224,7 +223,6 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               // },
             }}
             autoCorrect={false}
-            // onSubmitEditing={goNext}
             onFocus={() => setFocusedField(CardFields.ZipCode)}
           />
         </ScrollView>
