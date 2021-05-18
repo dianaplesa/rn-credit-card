@@ -213,15 +213,17 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             label={translations.zipCode}
             rules={{
               required: translations.zipCodeRequired,
-              // validate: {
-              //   isValid: (value: string) => {
-              //     return (
-              //       cardValidator.cardholderName(value).isValid ||
-              //       translations.cardNumberInvalid
-              //     )
-              //   },
-              // },
+              validate: {
+                isValid: (value: string) => {
+                  const tooShort = value.length <= 0
+                  return (
+                    // cardValidator.cardholderName(value).isValid ||
+                    tooShort && 'Enter a zip code with at least 2 characters and at most 10 characters containing letters, digits, spaces and - only.'
+                  )
+                },
+              },
             }}
+            maxLength={10}
             autoCorrect={false}
             onFocus={() => setFocusedField(CardFields.ZipCode)}
           />
