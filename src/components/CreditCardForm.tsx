@@ -211,6 +211,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             ref={zipCodeRef}
             name="zipCode"
             label={translations.zipCode}
+            validationLength={1}
             rules={{
               required: translations.zipCodeRequired,
               validate: {
