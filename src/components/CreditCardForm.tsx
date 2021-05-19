@@ -211,15 +211,15 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             ref={zipCodeRef}
             name="zipCode"
             label={translations.zipCode}
-            validationLength={2}
+            // validationLength={2}
             rules={{
               required: translations.zipCodeRequired,
               validate: {
                 isValid: (value: string) => {
-                  const tooShort = value.length === 1
+                  const validLength = value.length >= 1
                   return (
                    // cardValidator.cardholderName(value).isValid ||
-                    tooShort && 'Enter a zip code with at least 2 characters and at most 10 characters containing letters, digits, spaces and - only.'
+                    validLength || 'Enter a zip code with at least 2 characters and at most 10 characters containing letters, digits, spaces and - only.'
                   )
                 },
               },

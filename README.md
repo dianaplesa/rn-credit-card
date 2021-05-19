@@ -86,6 +86,7 @@ const App: React.FC = () => {
       cardNumber: '',
       expiration: '',
       cvv: '',
+      zipCode: '
     },
   })
   const { handleSubmit, formState } = formMethods
