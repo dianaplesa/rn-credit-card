@@ -138,7 +138,7 @@ const TextField = React.forwardRef<TextInput, Props>((props, ref) => {
 
 const styles = StyleSheet.create({
   input: {
-    padding: 24,
+    padding: 15,
     borderWidth: 1,
     borderRadius: 4,
     fontSize: 16,
