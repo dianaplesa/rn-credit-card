@@ -159,7 +159,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
               style={[
                 textFieldStyle,
                 {
-                  marginRight: isHorizontal ? 0 : 15,
+                  marginRight: isHorizontal ? 0 : 24,
                 },
               ]}
               ref={expirationRef}
@@ -218,15 +218,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
                 value: 2,
                 message: 'Enter a zip code with at least 2 characters and at most 10 characters containing letters, digits, spaces and - only.'
               },
-              validate: {
-                // isValid: (value: string) => {
-                //   const validLength = value.length >= 1
-                //   return (
-                //    // cardValidator.cardholderName(value).isValid ||
-                //     validLength || 'Enter a zip code with at least 2 characters and at most 10 characters containing letters, digits, spaces and - only.'
-                //   )
-                // },
-              },
+              validate: {},
             }}
             maxLength={10}
             autoCorrect={false}

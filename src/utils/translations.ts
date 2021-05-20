@@ -8,7 +8,7 @@ export function getTranslations(
     cardHolderName: 'Name on card',
     nameSurname: 'Name Surname',
     mmYY: 'MM/YY',
-    expiration: 'Expiration date (MM/YY)',
+    expiration: 'Expiration date',
     securityCode: 'CVV',
     zipCode: 'Zip code',
     next: 'Next',
