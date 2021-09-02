@@ -139,7 +139,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             ref={holderNameRef}
             name="holderName"
             label={translations.cardHolderName}
-            maxLength={255}
+            maxLength={100}
             rules={{
               required: translations.cardHolderNameRequired,
               validate: {
@@ -212,7 +212,6 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             ref={zipCodeRef}
             name="zipCode"
             label={translations.zipCode}
-            // validationLength={2}
             rules={{
               required: translations.zipCodeRequired,
               minLength: {
