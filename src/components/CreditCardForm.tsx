@@ -140,7 +140,6 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
             name="holderName"
             label={translations.cardHolderName}
             maxLength={100}
-            validationLength={100}
             rules={{
               required: translations.cardHolderNameRequired,
               validate: {
